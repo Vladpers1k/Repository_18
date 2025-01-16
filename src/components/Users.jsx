@@ -1,5 +1,5 @@
-import React, { useState } from 'react' // Add useState import
-import { useSelector, useDispatch } from 'react-redux' // Add useDispatch import
+import React, { useState } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
 import UserList from './Nested/UserList'
 import { addUser, removeUser } from '../store/usersSlice'
 
@@ -22,16 +22,10 @@ const Users = () => {
   return (
     <div className="users-page">
       <h2>Users Page</h2>
-      <UserList users={users} />
+      {}
+      <UserList users={users} onRemoveUser={handleRemoveUser} />
       <input type="text" value={newUser} onChange={(e) => setNewUser(e.target.value)} placeholder="Add new user" />
       <button onClick={handleAddUser}>Add User</button>
-      <ul>
-        {users.map((user) => (
-          <li key={user.id}>
-            {user.name} <button onClick={() => handleRemoveUser(user.id)}>Remove</button>
-          </li>
-        ))}
-      </ul>
     </div>
   )
 }
